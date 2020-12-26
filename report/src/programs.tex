@@ -1,0 +1,27 @@
+\section*{Описание структуры программы}
+
+Программа разделена на следующие фрагменты:
+\begin{itemize}
+    \item \textbf{BitIoStream} - поток побитового ввода/вывода
+    \item \textbf{FrequencyTable} - таблица с частотами символов
+    \item \textbf{ArithmeticCoder} - функции для обновления границ тега
+    \item \textbf{ArithmeticCompress} - основная программа для сжатия
+    \item \textbf{ArithmeticDecompress} - программа для декодирования
+\end{itemize}
+
+\section*{Пример работы программы}
+
+\begin{lstlisting}
+(base) MacBook:src dandachok$ ./encoder ../tests/input/1mb.t ../tests/encode/1mb.az
+(base) MacBook:src dandachok$ du -h ../tests/input/1mb.t
+980K    ../tests/input/1mb.t
+(base) MacBook:src dandachok$ du -h ../tests/encode/1mb.az
+568K    ../tests/encode/1mb.az
+(base) MacBook:src dandachok$ ./decoder ../tests/encode/1mb.az ../tests/output/1mb.t
+(base) MacBook:src dandachok$ du -h ../tests/output/1mb.t 
+980K    ../tests/output/1mb.t
+(base) MacBook:src dandachok$ diff ../tests/input/1mb.t ../tests/output/1mb.t
+(base) MacBook:src dandachok$ 
+\end{lstlisting}
+
+\pagebreak
